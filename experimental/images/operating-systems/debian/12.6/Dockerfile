@@ -43,4 +43,4 @@ RUN chmod +x /build.sh && \
     /build.sh && \
     rm -f /build.sh && \
     rm -rf ${BASE_TOOLS_DIR}
-ENTRYPOINT [ "/init" ]
+ENTRYPOINT ["/init"]
