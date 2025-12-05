@@ -10,8 +10,6 @@ S6_DIR=/etc/s6-overlay/s6-rc.d
 SDK_SERVER=sdk-server
 mkdir -p "$S6_DIR/$SDK_SERVER" "$S6_DIR/$SDK_SERVER/dependencies.d"
 
-
-
 # Create run first
 echo longrun >"$S6_DIR/$SDK_SERVER/type"
 cat >"$S6_DIR/$SDK_SERVER/run" <<'sdk-server'
