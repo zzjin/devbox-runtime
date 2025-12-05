@@ -44,4 +44,6 @@ fi
 finish-sdk-server
 chmod 700 "$S6_DIR/$SDK_SERVER/finish"
 
+: >"$S6_DIR/user/contents.d/$SDK_SERVER"
+
 echo "devbox sdk server services ensured." >&2
