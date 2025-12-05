@@ -8,7 +8,7 @@ ARG L10N_NORMALIZED=en-us
 # and release new versions as needed.
 ARG NODE_IMAGE_VERSION=v0.0.1-alpha.1-${L10N_NORMALIZED}
 
-FROM ${REGISTRY}/${REPO}/node-24:${NODE_IMAGE_VERSION}
+FROM ${REGISTRY}/${REPO}/node.js-24:${NODE_IMAGE_VERSION}
 LABEL org.opencontainers.image.authors="The Devbox Authors"
 COPY ./project /home/devbox/project
 COPY ./build.sh /build.sh
