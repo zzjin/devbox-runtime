@@ -2,6 +2,7 @@
 ARG REPO=labring-actions/devbox-base-expt
 ARG REGISTRY=ghcr.io
 ARG L10N_NORMALIZED=en-us
+ARG DEFAULT_DEVBOX_USER=devbox
 
 # These ARGs are not recommended to be overridden at build time.
 # Instead, update the Dockerfile directly for consistent builds,
@@ -15,3 +16,5 @@ COPY ./build.sh /build.sh
 RUN chmod +x /build.sh && \
     /build.sh && \
     rm -f /build.sh
+# Set the working directory to the default devbox user's project directory
+WORKDIR /home/${DEFAULT_DEVBOX_USER}/project
