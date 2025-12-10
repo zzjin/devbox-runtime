@@ -19,7 +19,7 @@ set -euo pipefail
 if [ -n "${DEVBOX_JWT_SECRET:-}" ] && [ "${DEVBOX_ENV:-}" != "production" ]; then
 	echo "DEVBOX_JWT_SECRET exists and is non-empty AND DEVBOX_ENV is not production"
 	# start the longrun devbox sdk server service.
-	exec /usr/sbin/devbox-sdk-server --workspace-path=/home/devbox/project
+	exec s6-setuidgid devbox /usr/sbin/devbox-sdk-server --workspace-path=/home/devbox/project
 else
 	# custom exit code to indicate missing env var
     exit 101
